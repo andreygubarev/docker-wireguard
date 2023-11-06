@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.description="Docker image for WireGuard"
 LABEL org.opencontainers.image.authors="Andrey Gubarev <andrey@andreygubarev.com>"
 
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -yq --no-install-recommends \
         iproute2 \
         iptables \
         nftables \
