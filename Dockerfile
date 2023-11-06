@@ -8,7 +8,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -yq --no-install-recommends \
         iproute2 \
         iptables \
-        nftables \
         openresolv \
         procps \
         wireguard-tools \
