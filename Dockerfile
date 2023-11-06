@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         iproute2 \
         iptables \
         nftables \
-        resolvconf \
+        openresolv \
         wireguard-tools \
         tini \
     && rm -rf /var/lib/apt/lists/*
