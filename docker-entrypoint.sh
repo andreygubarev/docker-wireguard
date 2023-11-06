@@ -7,4 +7,11 @@ if [ ! -f /etc/wireguard/wg0.conf ]; then
 fi
 
 wg-quick up wg0
+
+on_shutdown() {
+    wg-quick down wg0
+    exit 0
+}
+trap 'on_shutdown' SIGTERM
+
 sleep infinity
