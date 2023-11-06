@@ -6,10 +6,12 @@ LABEL org.opencontainers.image.authors="Andrey Gubarev <andrey@andreygubarev.com
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -yq --no-install-recommends \
+        ip6tables \
         iproute2 \
         iptables \
         nftables \
         openresolv \
+        procps \
         wireguard-tools \
         tini \
     && rm -rf /var/lib/apt/lists/*
