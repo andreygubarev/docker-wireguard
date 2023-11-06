@@ -8,10 +8,9 @@ fi
 
 wg-quick up wg0
 
-on_shutdown() {
+on_interrupt() {
     wg-quick down wg0
     exit 0
 }
-trap 'on_shutdown' SIGTERM
-
-sleep infinity
+trap on_interrupt SIGTERM SIGINT SIGQUIT
+sleep infinity & wait
