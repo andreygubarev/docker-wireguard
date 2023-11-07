@@ -16,3 +16,8 @@ docker run \
     -v "$(pwd)/wg0.conf:/etc/wireguard/wg0.conf:ro" \
     ghcr.io/andreygubarev/wireguard:latest
 ```
+
+# References
+
+- Patch for `src_valid_mark` sysctl: https://lists.zx2c4.com/pipermail/wireguard/2023-February/007936.html
+
