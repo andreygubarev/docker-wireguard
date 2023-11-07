@@ -14,5 +14,6 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
         tini \
     && rm -rf /var/lib/apt/lists/*
 
+COPY scripts/wg-quick.sh /usr/bin/wg-quick
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"]
