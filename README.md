@@ -9,9 +9,10 @@ docker pull ghcr.io/andreygubarev/wireguard:latest
 ## Usage
 
 ```bash
-docker run --rm \
+docker run \
+    --name wireguard \
     --cap-add NET_ADMIN \
-    --cap-add SYS_MODULE \
+    --sysctl "net.ipv4.conf.all.src_valid_mark=1" \
     -v "$(pwd)/wg0.conf:/etc/wireguard/wg0.conf:ro" \
     ghcr.io/andreygubarev/wireguard:latest
 ```
